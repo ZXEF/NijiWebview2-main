@@ -1,0 +1,215 @@
+.diary-editor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.diary-editor > div {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.editor-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.date-picker {
+  flex: 1;
+}
+
+.date-picker input {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.date-picker input:hover:not(:disabled) {
+  border-color: #4a90e2;
+}
+
+.date-picker input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.actions button {
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.save-btn {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background-color: #357abd;
+  transform: translateY(-1px);
+}
+
+.save-btn:disabled {
+  background-color: #a0c3e8;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.cancel-btn:hover {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+.editor-body {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.title-input {
+  border: none;
+  border-bottom: 2px solid #eee;
+  padding: 8px 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  width: 100%;
+  transition: border-color 0.2s ease;
+  background: transparent;
+}
+
+.title-input:focus {
+  outline: none;
+  border-bottom-color: #4a90e2;
+}
+
+.title-input::placeholder {
+  color: #999;
+  font-weight: normal;
+}
+
+.content-input {
+  flex: 1;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  resize: none;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  min-height: 300px;
+}
+
+.content-input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.content-input::placeholder {
+  color: #999;
+}
+
+/* 滚动条样式 */
+.editor-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.editor-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.editor-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.editor-body::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.content-input::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content-input::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-input::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.content-input::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+.timestamp-btn {
+  background-color: #f0f7ff;
+  color: #4a90e2;
+  border: 1px solid #4a90e2 !important;
+}
+
+.timestamp-btn:hover {
+  background-color: #e3f2fd;
+  transform: translateY(-1px);
+} 
